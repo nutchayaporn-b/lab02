@@ -32,6 +32,12 @@ app.component("product-display", {
             >
             Add to Cart
             </button>
+            <button
+            class="button"
+            @click="removeFromCart"
+            >
+            Remove from Cart
+            </button>
             </div>
           </div>
         </div>`,
@@ -43,12 +49,14 @@ app.component("product-display", {
             variants: [
                 {
                     id: 2234,
+                    name: "Shoes Green",
                     color: "green",
                     image: "./assets/images/socks_green.jpg",
                     quantity: 10,
                 },
                 {
                     id: 2235,
+                    name: "Shoes Blue",
                     color: "blue",
                     image: "./assets/images/socks_blue.jpg",
                     quantity: 1,
@@ -83,7 +91,10 @@ app.component("product-display", {
     },
     methods: {
         addToCart() {
-            this.$emit("add-to-cart", this.variants[this.selectedVariant].id);
+            this.$emit("add-to-cart", this.variants[this.selectedVariant]);
+        },
+        removeFromCart() {
+            this.$emit("remove-from-cart", this.variants[this.selectedVariant]);
         },
         updateImage(variantImage) {
             this.image = variantImage;
