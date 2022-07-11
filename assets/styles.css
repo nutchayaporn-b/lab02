@@ -5,6 +5,29 @@ body {
     color: #282828;
 }
 
+.outOfStock {
+    cursor: not-allowed;
+    border: 10px solid red;
+}
+
+.color-circle {
+    width: 50px;
+    height: 50px;
+    margin-top: 8px;
+    border: 2px solid #d8d8d8;
+    border-radius: 50%;
+}
+
+.disabledButton {
+    background-color: #d8d8d8;
+    color: #282828;
+    border: 2px solid #d8d8d8;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: 8px;
+}
+
 .button {
     margin: 30px;
     background-color: #39495c;
@@ -14,7 +37,9 @@ body {
     height: 60px;
     color: white;
     padding: 20px;
-    box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17), inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15), inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+        inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+        inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
     text-align: center;
     cursor: pointer;
 }
@@ -86,7 +111,7 @@ li {
 }
 
 .out-of-stock-img {
-    opacity: 0.5
+    opacity: 0.5;
 }
 
 p {
