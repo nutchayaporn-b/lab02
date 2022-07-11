@@ -40,6 +40,10 @@ app.component("product-display", {
             </button>
             </div>
           </div>
+          <div style="display:flex">
+          <review-form @review-submitted="addReview"></review-form>
+          <review-list v-if="reviews.length" :reviews="reviews"></review-list>
+          </div>
         </div>`,
     data() {
         return {
@@ -62,9 +66,10 @@ app.component("product-display", {
                     quantity: 1,
                 },
             ],
+            onSale: true,
             brand: "SE 331",
             selectedVariant: 0,
-            onSale: true,
+            reviews: [],
         };
     },
     computed: {
@@ -101,6 +106,9 @@ app.component("product-display", {
         },
         updateVariant(index) {
             this.selectedVariant = index;
+        },
+        addReview(review) {
+            this.reviews.push(review);
         },
     },
 });
