@@ -34,5 +34,15 @@ const app = Vue.createApp({
                 this.cart.push(newItem);
             }
         },
+        removeFromCart(item) {
+            const cartItem = this.cart.find(
+                (cartItem) => cartItem.id === item.id
+            );
+            if (cartItem.inCart > 1) {
+                cartItem.inCart--;
+            } else {
+                this.cart.splice(this.cart.indexOf(cartItem), 1);
+            }
+        },
     },
 });
